@@ -28,7 +28,7 @@ export default function LoginScreen() {
     try {
       await signInWithEmail(email, password);
       router.replace('/(tabs)');
-    } catch (err) {
+    } catch (_err) {
       setError('Invalid email or password');
     } finally {
       setIsLoading(false);
@@ -42,7 +42,7 @@ export default function LoginScreen() {
     try {
       await signInWithGoogle();
       // The redirect will happen automatically
-    } catch (err) {
+    } catch (_err) {
       setError('Google sign in failed');
       setIsGoogleLoading(false);
     }

@@ -12,7 +12,7 @@ type ProfileTab = 'personal' | 'business';
 
 export default function ProfileScreen() {
   const { tab } = useLocalSearchParams<{ tab?: ProfileTab }>();
-  const { user, logout, isAuthenticated } = useAuth();
+  const { user, signOut, isAuthenticated } = useAuth();
   const [activeTab, setActiveTab] = useState<ProfileTab>(tab as ProfileTab || 'personal');
   
   if (!isAuthenticated) {
@@ -74,7 +74,7 @@ export default function ProfileScreen() {
           )}
         </View>
         
-        <Pressable style={styles.logoutButton} onPress={logout}>
+                    <Pressable style={styles.logoutButton} onPress={signOut}>
           <LogOut size={20} color="#DC2626" />
           <Text style={styles.logoutText}>Log Out</Text>
         </Pressable>

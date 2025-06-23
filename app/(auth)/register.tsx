@@ -35,7 +35,7 @@ export default function RegisterScreen() {
     try {
       await signUpWithEmail(username, email, password);
       router.push('/(auth)/chamber-select');
-    } catch (err) {
+    } catch (_err) {
       setError('Registration failed. Please try again.');
     } finally {
       setIsLoading(false);
@@ -49,7 +49,7 @@ export default function RegisterScreen() {
     try {
       await signInWithGoogle();
       // The redirect will happen automatically
-    } catch (err) {
+    } catch (_err) {
       setError('Google sign up failed');
       setIsGoogleLoading(false);
     }

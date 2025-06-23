@@ -52,19 +52,18 @@ export default function TabLayout() {
           tabBarIcon: ({ color, size }) => <Menu size={size} color={color} />,
         }}
       />
-      {isAuthenticated && (
-        <Tabs.Screen
-          name="messages"
-          options={{
-            title: 'Messages',
-            tabBarIcon: ({ color, size }) => (
-              <NotificationBadge count={3}>
-                <MessageSquare size={size} color={color} />
-              </NotificationBadge>
-            ),
-          }}
-        />
-      )}
+      <Tabs.Screen
+        name="messages"
+        options={{
+          title: 'Messages',
+          href: isAuthenticated ? '/messages' : null,
+          tabBarIcon: ({ color, size }) => (
+            <NotificationBadge count={3}>
+              <MessageSquare size={size} color={color} />
+            </NotificationBadge>
+          ),
+        }}
+      />
       <Tabs.Screen
         name="profile"
         options={{

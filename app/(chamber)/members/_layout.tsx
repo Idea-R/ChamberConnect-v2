@@ -13,7 +13,7 @@ export default function MembersLayout() {
           color: '#1F2937',
         },
         headerTintColor: '#1F2937',
-        headerBackTitleVisible: false,
+        headerBackVisible: false,
       }}
     >
       <Stack.Screen 

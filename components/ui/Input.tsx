@@ -1,8 +1,9 @@
-import { StyleSheet, Text, TextInput, View, TextInputProps } from 'react-native';
+import { StyleSheet, Text, TextInput, View, TextInputProps, ViewStyle } from 'react-native';
 
-interface InputProps extends TextInputProps {
+interface InputProps extends Omit<TextInputProps, 'style'> {
   label: string;
   error?: string;
+  style?: ViewStyle;
 }
 
 export function Input({ label, error, style, ...props }: InputProps) {
